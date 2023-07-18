@@ -21,7 +21,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path='/detail-page' element={<AuthorDetail/>} />
+            <Route path='/detail-page/:id' element={<AuthorDetail/>} />
           </Routes>
         </BrowserRouter>
 

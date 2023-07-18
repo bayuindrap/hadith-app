@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { hadithAction } from '../redux/actions/hadithAction';
 import { Card, CardBody } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 const HomePage = () => {
@@ -56,7 +57,10 @@ const HomePage = () => {
                                         }}
                                     >
                                         <CardBody>
-                                            <p style={{ color: "black" }}>{listHadith[index].name}</p>
+                                            {/* go to detail page */}
+                                            <Link to={`/detail-page/${listHadith[index].id}`} style={{ textDecoration: 'none' }}>
+                                                <p style={{ color: 'black' }}>{listHadith[index].name}</p>
+                                            </Link>
                                         </CardBody>
                                     </Card>
                                 </div>
