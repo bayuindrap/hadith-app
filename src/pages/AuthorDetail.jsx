@@ -10,7 +10,7 @@ const AuthorDetail = () => {
     useEffect(() => {
         const fetchauthorDetail = async () => {
             try {
-                const response = await fetch(`https://api.hadith.gading.dev/books/${id}?range=1-49`);
+                const response = await fetch(`https://api.hadith.gading.dev/books/${id}?range=1-20`);
                 // console.log("testing", response.data)
                 if (!response.ok) {
                     throw new Error('Failed to fetch product detail');
@@ -49,7 +49,7 @@ const AuthorDetail = () => {
     return (
         <div>
             <h2 style={{color: "black"}}>Detail</h2>
-            <p style={{color: "black"}}>Author ID: {id}</p>
+            <p style={{color: "black"}}>Author Name: {id}</p>
             {authorDetail && (
                 <div style={{color: "black"}}>
                     {/* <h3 style={{color: "black"}}>{authorDetail.arab}</h3>

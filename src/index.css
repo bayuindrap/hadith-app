@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,6 +28,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #ffffff;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 h1 {
@@ -68,4 +69,19 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
   
+}
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  transition-duration: 0.3s;
+  transition-property: transform .2s;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  transform: scale(1.1);
+}
+
+* {
+  font-family: 'Josefin Sans', sans-serif;
 }

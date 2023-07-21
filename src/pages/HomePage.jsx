@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { hadithAction } from '../redux/actions/hadithAction';
 import { Card, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { Box, Button, ButtonGroup, theme } from '@chakra-ui/react'
+
 
 
 const HomePage = () => {
@@ -47,44 +49,35 @@ const HomePage = () => {
                     if (listHadith[index]) {
                         return (
                             <div key={index} style={{ display: "flex", justifyContent: "center" }}>
-                                <div>
-                                    <Card
-                                        style={{
-                                            width: "12vw",
-                                            borderRadius: 15,
-                                            height: "12vh",
-                                            border: "1px solid black"
-                                        }}
-                                    >
-                                        <CardBody>
-                                            {/* go to detail page */}
-                                            <Link to={`/detail-page/${listHadith[index].id}`} style={{ textDecoration: 'none' }}>
-                                                <p style={{ color: 'black' }}>{listHadith[index].name}</p>
-                                            </Link>
-                                        </CardBody>
-                                    </Card>
-                                </div>
+                                <Box p="7">
+                                    <Link to={`/detail-page/${listHadith[index].id}`} style={{ textDecoration: 'none' }}>
+                                        <Button colorScheme='green' size='lg' borderRadius="full" className="hvr-grow" style={{width:"185px"}}>{listHadith[index].name}</Button>
+                                    </Link>
+                                </Box>
                             </div>
                         );
                     } else {
-                        return null; // Render null if the element is undefined
+                        return null;
                     }
                 })}
             </div>
         );
     };
 
+    // <Link to={`/detail-page/${listHadith[index].id}`} style={{ textDecoration: 'none' }}>
+    //     <p style={{ color: 'black' }}>{listHadith[index].name}</p>
+    // </Link>
 
 
 
 
     return (
-        <div className="col" style={{ color: "black" }}>
-            <h2 style={{ color: "black", textAlign: "center" }}>H O M E P A G E</h2>
-            <div>
+        <Box>
+            <p style={{ color: "black", textAlign: "center", fontSize: "25px" }}>Hadith App</p>
+            <Box pt="10vh">
                 {printData()}
-            </div>
-        </div>
+            </Box>
+        </Box>
     )
 }
 
